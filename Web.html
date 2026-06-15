@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anil M — AWS Cloud Engineer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent: #6366f1;
+            --accent2: #a855f7;
+            --accent3: #ec4899;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        /* ── DARK (default) ── */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: radial-gradient(ellipse at 15% 20%, rgba(99, 102, 241, 0.18) 0%, transparent 50%),
+                    radial-gradient(ellipse at 85% 75%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                    #080c14;
+                color: #f1f5f9;
+            }
+
+            .glass {
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(20px) saturate(160%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%);
+                border: 1px solid rgba(255, 255, 255, 0.09);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            }
+
+            .glass-nav {
+                background: rgba(8, 12, 20, 0.5);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .glass-hover:hover {
+                background: rgba(255, 255, 255, 0.07) !important;
+                border-color: rgba(99, 102, 241, 0.35) !important;
+                box-shadow: 0 16px 48px rgba(99, 102, 241, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+            }
+
+            .skill-tag {
+                background: rgba(99, 102, 241, 0.12);
+                border: 1px solid rgba(99, 102, 241, 0.25);
+                color: #a5b4fc;
+            }
+
+            .timeline-line {
+                background: linear-gradient(180deg, #6366f1, #a855f7, transparent);
+            }
+
+            .sub-text {
+                color: #94a3b8;
+            }
+
+            .muted {
+                color: #64748b;
+            }
+
+            .card-bg {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.07);
+            }
+
+            .section-divider {
+                border-color: rgba(255, 255, 255, 0.06);
+            }
+
+            .download-btn {
+                background: linear-gradient(135deg, #6366f1, #a855f7);
+                color: #fff;
+            }
+
+            .download-btn:hover {
+                opacity: 0.88;
+            }
+
+            .contact-chip {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .cert-badge {
+                background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(234, 88, 12, 0.1));
+                border: 1px solid rgba(245, 158, 11, 0.3);
+                color: #fbbf24;
+            }
+
+            .project-accent {
+                background: rgba(168, 85, 247, 0.1);
+                border: 1px solid rgba(168, 85, 247, 0.2);
+            }
+
+            .nav-link {
+                color: #94a3b8;
+            }
+
+            .nav-link:hover {
+                color: #f1f5f9;
+            }
+
+            .mobile-menu {
+                background: rgba(8, 12, 20, 0.95);
+                backdrop-filter: blur(24px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+        }
+
+        /* ── LIGHT ── */
+        @media (prefers-color-scheme: light) {
+            body {
+                background: radial-gradient(ellipse at 15% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+                    radial-gradient(ellipse at 85% 75%, rgba(168, 85, 247, 0.10) 0%, transparent 50%),
+                    #eef0f8;
+                color: #0f172a;
+            }
+
+            .glass {
+                background: rgba(255, 255, 255, 0.62);
+                backdrop-filter: blur(20px) saturate(200%);
+                -webkit-backdrop-filter: blur(20px) saturate(200%);
+                border: 1px solid rgba(255, 255, 255, 0.85);
+                box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1), 0 2px 8px rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            }
+
+            .glass-nav {
+                background: rgba(255, 255, 255, 0.55);
+                backdrop-filter: blur(24px) saturate(200%);
+                -webkit-backdrop-filter: blur(24px) saturate(200%);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+                box-shadow: 0 1px 16px rgba(0, 0, 0, 0.07);
+            }
+
+            .glass-hover:hover {
+                background: rgba(255, 255, 255, 0.85) !important;
+                border-color: rgba(99, 102, 241, 0.3) !important;
+                box-shadow: 0 16px 48px rgba(99, 102, 241, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+            }
+
+            .skill-tag {
+                background: rgba(99, 102, 241, 0.1);
+                border: 1px solid rgba(99, 102, 241, 0.22);
+                color: #4338ca;
+            }
+
+            .timeline-line {
+                background: linear-gradient(180deg, #6366f1, #a855f7, transparent);
+            }
+
+            .sub-text {
+                color: #475569;
+            }
+
+            .muted {
+                color: #94a3b8;
+            }
+
+            .card-bg {
+                background: rgba(255, 255, 255, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.75);
+            }
+
+            .section-divider {
+                border-color: rgba(0, 0, 0, 0.07);
+            }
+
+            .download-btn {
+                background: linear-gradient(135deg, #6366f1, #a855f7);
+                color: #fff;
+            }
+
+            .download-btn:hover {
+                opacity: 0.88;
+            }
+
+            .contact-chip {
+                background: rgba(255, 255, 255, 0.7);
+                border: 1px solid rgba(255, 255, 255, 0.85);
+                color: #374151;
+            }
+
+            .cert-badge {
+                background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(234, 88, 12, 0.08));
+                border: 1px solid rgba(245, 158, 11, 0.35);
+                color: #d97706;
+            }
+
+            .project-accent {
+                background: rgba(168, 85, 247, 0.07);
+                border: 1px solid rgba(168, 85, 247, 0.18);
+            }
+
+            .nav-link {
+                color: #374151;
+            }
+
+            .nav-link:hover {
+                color: #0f172a;
+            }
+
+            .mobile-menu {
+                background: rgba(238, 240, 248, 0.97);
+                backdrop-filter: blur(24px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+            }
+        }
+
+        /* ── Shared styles ── */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(130px);
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.55;
+        }
+
+        .glow-1 {
+            width: 500px;
+            height: 500px;
+            top: -100px;
+            left: -100px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
+            animation: drift1 18s ease-in-out infinite alternate;
+        }
+
+        .glow-2 {
+            width: 400px;
+            height: 400px;
+            bottom: 10%;
+            right: -80px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 70%);
+            animation: drift2 14s ease-in-out infinite alternate;
+        }
+
+        .glow-3 {
+            width: 300px;
+            height: 300px;
+            top: 60%;
+            left: 30%;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 70%);
+            animation: drift1 20s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes drift1 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(60px, 40px);
+            }
+        }
+
+        @keyframes drift2 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-50px, -30px);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .avatar-ring {
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+            padding: 3px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .avatar-inner {
+            background: conic-gradient(from 180deg, #6366f1, #a855f7, #ec4899, #6366f1);
+            border-radius: 50%;
+            width: 96px;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .glass-card-transition {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .progress-bar {
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-pill {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 16px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .nav-pill:hover {
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        .nav-pill.active {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white !important;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6366f1;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.4), transparent);
+        }
+
+        .exp-card {
+            cursor: default;
+        }
+
+        .exp-card:hover .company-tag {
+            background: rgba(99, 102, 241, 0.2) !important;
+        }
+
+        .print-btn {
+            display: none;
+        }
+
+        @media print {
+            .print-btn {
+                display: none !important;
+            }
+
+            nav,
+            .glow-orb {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .glass {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+                background: white !important;
+            }
+        }
+
+        #mobile-nav {
+            display: none;
+        }
+
+        #mobile-nav.open {
+            display: flex;
+        }
+
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.92);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            pointer-events: none;
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
+    <div class="glow-orb glow-3"></div>
+
+    <!-- NAV -->
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                    <span class="text-white text-xs font-black">AM</span>
+                </div>
+                <span class="font-semibold text-sm hidden sm:block nav-link">Anil M</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-1">
+                <a href="#about" class="nav-pill nav-link" onclick="setActive(this)"><i data-lucide="user"
+                        class="w-3.5 h-3.5"></i>About</a>
+                <a href="#skills" class="nav-pill nav-link" onclick="setActive(this)"><i data-lucide="cpu"
+                        class="w-3.5 h-3.5"></i>Skills</a>
+                <a href="#experience" class="nav-pill nav-link" onclick="setActive(this)"><i data-lucide="briefcase"
+                        class="w-3.5 h-3.5"></i>Experience</a>
+                <a href="#projects" class="nav-pill nav-link" onclick="setActive(this)"><i data-lucide="layers"
+                        class="w-3.5 h-3.5"></i>Projects</a>
+                <a href="#education" class="nav-pill nav-link" onclick="setActive(this)"><i data-lucide="graduation-cap"
+                        class="w-3.5 h-3.5"></i>Education</a>
+                <a href="#contact" class="nav-pill nav-link" onclick="setActive(this)"><i data-lucide="mail"
+                        class="w-3.5 h-3.5"></i>Contact</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()"
+                    class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full download-btn text-xs font-semibold shadow-lg transition-all tooltip"
+                    data-tip="Print / Save as PDF">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Download CV
+                </button>
+                <button class="md:hidden p-2 rounded-lg glass nav-link" onclick="toggleMenu()">
+                    <i data-lucide="menu" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobile-nav" class="mobile-menu flex-col px-5 py-4 gap-2 md:hidden">
+            <a href="#about" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
+                    data-lucide="user" class="w-4 h-4"></i>About</a>
+            <a href="#skills" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
+                    data-lucide="cpu" class="w-4 h-4"></i>Skills</a>
+            <a href="#experience" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
+                    data-lucide="briefcase" class="w-4 h-4"></i>Experience</a>
+            <a href="#projects" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
+                    data-lucide="layers" class="w-4 h-4"></i>Projects</a>
+            <a href="#education" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
+                    data-lucide="graduation-cap" class="w-4 h-4"></i>Education</a>
+            <a href="#contact" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
+                    data-lucide="mail" class="w-4 h-4"></i>Contact</a>
+            <button onclick="window.print()" class="nav-pill download-btn text-sm w-fit"><i data-lucide="download"
+                    class="w-4 h-4"></i>Download CV</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-5 pt-24 pb-20 space-y-20">
+
+        <!-- HERO -->
+        <section id="hero" class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20"
+                style="background: radial-gradient(ellipse at 80% 20%, rgba(99,102,241,0.5), transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(168,85,247,0.4), transparent 60%);">
+            </div>
+            <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div class="flex-shrink-0">
+                    <div class="avatar-ring">
+                        <div class="avatar-inner">A</div>
+                    </div>
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2 mb-3">
+
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2">Anil <span
+                            class="gradient-text">M</span></h1>
+                    <p class="text-lg font-semibold sub-text mb-4">AWS Cloud Engineer &nbsp;·&nbsp; Amazon Connect
+                        Specialist &nbsp;·&nbsp; Solutions Architect</p>
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6">
+                        <span
+                            class="contact-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium">
+                            <i data-lucide="map-pin" class="w-3 h-3" style="color:#6366f1"></i> Bangalore, India
+                        </span>
+                        <a href="tel:+918310270245"
+                            class="contact-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium hover:border-indigo-400 transition-colors">
+                            <i data-lucide="phone" class="w-3 h-3" style="color:#6366f1"></i> +91 83102 70245
+                        </a>
+                        <a href="mailto:anilmanjunath.inbox@gmail.com"
+                            class="contact-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium hover:border-indigo-400 transition-colors">
+                            <i data-lucide="mail" class="w-3 h-3" style="color:#6366f1"></i>
+                            anilmanjunath.inbox@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                        <a href="#contact"
+                            class="px-6 py-2.5 rounded-full text-sm font-semibold text-white shadow-lg transition-all hover:opacity-88"
+                            style="background:linear-gradient(135deg,#6366f1,#a855f7)">
+                            <i data-lucide="send" class="w-3.5 h-3.5 inline mr-1.5"></i>Get In Touch
+                        </a>
+                        <a href="#experience"
+                            class="glass px-6 py-2.5 rounded-full text-sm font-semibold nav-link transition-all hover:opacity-80">
+                            View Experience
+                        </a>
+                        <button onclick="window.print()"
+                            class="glass px-6 py-2.5 rounded-full text-sm font-semibold nav-link transition-all hover:opacity-80">
+                            <i data-lucide="download" class="w-3.5 h-3.5 inline mr-1.5"></i>Download CV
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden lg:grid grid-cols-2 gap-3 flex-shrink-0">
+                    <div class="glass rounded-2xl p-4 text-center">
+                        <div class="text-2xl font-black gradient-text">6+</div>
+                        <div class="text-xs muted mt-1">Years Exp.</div>
+                    </div>
+                    <div class="glass rounded-2xl p-4 text-center">
+                        <div class="text-2xl font-black gradient-text">10+</div>
+                        <div class="text-xs muted mt-1">CC Solutions</div>
+                    </div>
+                    <div class="glass rounded-2xl p-4 text-center">
+                        <div class="text-2xl font-black gradient-text">6+</div>
+                        <div class="text-xs muted mt-1">Web Apps</div>
+                    </div>
+                    <div class="glass rounded-2xl p-4 text-center">
+                        <div class="text-2xl font-black gradient-text">AWS</div>
+                        <div class="text-xs muted mt-1">Certified</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+            <div class="section-label"><i data-lucide="user" class="w-3.5 h-3.5"></i>Professional Summary</div>
+            <div class="glass glass-card-transition glass-hover rounded-2xl p-7">
+                <p class="sub-text leading-relaxed text-base">
+                    AWS Cloud &amp; Amazon Connect Engineer with <strong class="gradient-text">6+ years</strong> of
+                    experience in designing scalable contact center solutions, serverless applications, and AI-driven
+                    automation. Proven expertise in <strong>Amazon Connect</strong>, AWS services, and GenAI
+                    integrations, with hands-on experience in building web applications, intelligent virtual agents, and
+                    real-time communication solutions like <strong>Click-to-Call</strong>. Strong track record of
+                    improving customer experience, automating workflows, and delivering secure, high-performance cloud
+                    solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="section-label"><i data-lucide="cpu" class="w-3.5 h-3.5"></i>Core Skills</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="p-2 rounded-xl" style="background:rgba(99,102,241,0.15)"><i data-lucide="cloud"
+                                class="w-4 h-4" style="color:#818cf8"></i></div>
+                        <span class="text-sm font-bold">Cloud &amp; AWS</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Amazon Connect</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Lambda</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">API Gateway</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">DynamoDB</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">S3</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">CloudFront</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">IAM</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Cognito</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">AWS Config</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">WorkSpaces</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Kinesis</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">SES</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="p-2 rounded-xl" style="background:rgba(236,72,153,0.12)"><i data-lucide="code-2"
+                                class="w-4 h-4" style="color:#f472b6"></i></div>
+                        <span class="text-sm font-bold">Programming &amp; Web</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Python</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">JavaScript</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Node.js</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">HTML</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">CSS</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Bootstrap</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="p-2 rounded-xl" style="background:rgba(168,85,247,0.12)"><i data-lucide="bot"
+                                class="w-4 h-4" style="color:#c084fc"></i></div>
+                        <span class="text-sm font-bold">AI &amp; Automation</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">GenAI Integrations</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">AI Incident Creation</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Call Summarization</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Smart Filtering</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Amazon Lex</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="p-2 rounded-xl" style="background:rgba(20,184,166,0.12)"><i data-lucide="git-branch"
+                                class="w-4 h-4" style="color:#2dd4bf"></i></div>
+                        <span class="text-sm font-bold">DevOps &amp; Tools</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">CloudFormation</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">YAML / JSON</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Git</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Postman</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="p-2 rounded-xl" style="background:rgba(245,158,11,0.12)"><i
+                                data-lucide="flask-conical" class="w-4 h-4" style="color:#fbbf24"></i></div>
+                        <span class="text-sm font-bold">Testing</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Selenium WebDriver</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">TestNG</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">API Testing</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Manual Testing</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="p-2 rounded-xl" style="background:rgba(34,197,94,0.12)"><i data-lucide="settings"
+                                class="w-4 h-4" style="color:#4ade80"></i></div>
+                        <span class="text-sm font-bold">Other</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">System Design</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Troubleshooting</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Documentation</span>
+                        <span class="skill-tag px-2.5 py-1 rounded-lg text-xs font-medium">Architecture Diagrams</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <div class="section-label"><i data-lucide="briefcase" class="w-3.5 h-3.5"></i>Professional Experience</div>
+            <div class="space-y-4">
+
+                <!-- Hexaware -->
+                <div class="glass glass-card-transition glass-hover exp-card rounded-2xl p-6 md:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="company-tag px-3 py-1 rounded-full text-xs font-bold transition-colors"
+                                    style="background:rgba(99,102,241,0.12);color:#818cf8">Hexaware Technologies</span>
+                                <span class="text-xs muted">Bengaluru</span>
+                            </div>
+                            <h3 class="text-lg font-bold">Deputy Technical Specialist — AWS Connect</h3>
+                        </div>
+                        <span class="flex-shrink-0 glass px-3 py-1 rounded-full text-xs font-semibold"
+                            style="color:#6366f1">Aug 2025 – Present</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Designed and enforced cloud compliance
+                            frameworks using AWS Config, proactively identifying and resolving security gaps.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span style="color:#6366f1;margin-top:3px">▸</span>Led
+                            SSO migration for Amazon Connect, improving identity governance and enterprise-level access
+                            control.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Built serverless automation solutions using
+                            AWS Lambda for integrations, workflows, and security remediation.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Developed GenAI-powered post-call
+                            summarization, reducing agent handling time and improving productivity.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Managed and deployed Amazon WorkSpaces
+                            environments for secure, scalable agent operations.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span style="color:#6366f1;margin-top:3px">▸</span>Developed 6+ production-grade web applications using AWS (S3, CloudFront, API Gateway, Lambda, DynamoDB) with responsive, modern UI built in HTML, CSS, and JavaScript.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span style="color:#6366f1;margin-top:3px">▸</span>Designed full-stack operational dashboards integrating real-time data via REST APIs, featuring interactive charts, live metrics, and role-based views.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span style="color:#6366f1;margin-top:3px">▸</span>Hosted static websites on S3 with CloudFront CDN, custom domain, and SSL — achieving sub-second global load times and 99.99% availability.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span style="color:#6366f1;margin-top:3px">▸</span>Integrated Cognito-based authentication into web portals for secure, role-based agent and admin access with SSO support.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Designed a WebRTC-based Click-to-Call
+                            solution enabling voice connectivity without phone numbers — deployable on web, Teams, and
+                            enterprise apps.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Built an AI-powered incident automation
+                            system that auto-creates support tickets when agents are unavailable.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#6366f1;margin-top:3px">▸</span>Implemented intelligent spam filtering,
+                            reducing invalid interactions and improving system reliability.</li>
+                    </ul>
+                </div>
+
+                <!-- Capgemini -->
+                <div class="glass glass-card-transition glass-hover exp-card rounded-2xl p-6 md:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="company-tag px-3 py-1 rounded-full text-xs font-bold transition-colors"
+                                    style="background:rgba(168,85,247,0.12);color:#c084fc">Capgemini</span>
+                                <span class="text-xs muted">Bengaluru</span>
+                            </div>
+                            <h3 class="text-lg font-bold">Amazon Connect Developer</h3>
+                        </div>
+                        <span class="flex-shrink-0 glass px-3 py-1 rounded-full text-xs font-semibold"
+                            style="color:#a855f7">Mar 2025 – Aug 2025</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#a855f7;margin-top:3px">▸</span>Built and configured Amazon Connect
+                            components including Contact Flows, Routing Profiles, Queues, and Security Profiles.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#a855f7;margin-top:3px">▸</span>Diagnosed and resolved production issues
+                            across AWS services, ensuring stability and uptime.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#a855f7;margin-top:3px">▸</span>Supported live contact center environments,
+                            optimizing performance and reliability.</li>
+                    </ul>
+                </div>
+
+                <!-- Wipro Developer -->
+                <div class="glass glass-card-transition glass-hover exp-card rounded-2xl p-6 md:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="company-tag px-3 py-1 rounded-full text-xs font-bold transition-colors"
+                                    style="background:rgba(236,72,153,0.12);color:#f472b6">Wipro</span>
+                                <span class="text-xs muted">Bengaluru</span>
+                            </div>
+                            <h3 class="text-lg font-bold">Amazon Connect Developer</h3>
+                        </div>
+                        <span class="flex-shrink-0 glass px-3 py-1 rounded-full text-xs font-semibold"
+                            style="color:#ec4899">Feb 2020 – Feb 2025</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#ec4899;margin-top:3px">▸</span>Designed and delivered 10+ enterprise
+                            contact center solutions with integrations to Salesforce, ServiceNow, and WFM systems.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#ec4899;margin-top:3px">▸</span>Implemented Voicemail, Callbacks, Surveys,
+                            Custom CCP, and chatbots (Amazon Lex).</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#ec4899;margin-top:3px">▸</span>Developed serverless architectures using
+                            Lambda, DynamoDB, API Gateway, CloudFront, and Kinesis.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#ec4899;margin-top:3px">▸</span>Worked extensively with Contact Lens,
+                            Streams API, and Connect APIs.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#ec4899;margin-top:3px">▸</span>Conducted training sessions for agents and
+                            stakeholders; created VISIO diagrams and technical documentation.</li>
+                    </ul>
+                </div>
+
+                <!-- Wipro Test Engineer -->
+                <div class="glass glass-card-transition glass-hover exp-card rounded-2xl p-6 md:p-7">
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="company-tag px-3 py-1 rounded-full text-xs font-bold transition-colors"
+                                    style="background:rgba(245,158,11,0.12);color:#fbbf24">Wipro</span>
+                                <span class="text-xs muted">Bengaluru</span>
+                            </div>
+                            <h3 class="text-lg font-bold">Test Engineer</h3>
+                        </div>
+                        <span class="flex-shrink-0 glass px-3 py-1 rounded-full text-xs font-semibold"
+                            style="color:#f59e0b">Jul 2019 – Feb 2020</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#f59e0b;margin-top:3px">▸</span>Designed and executed test plans and
+                            automation frameworks using Selenium WebDriver and TestNG.</li>
+                        <li class="flex gap-2.5 text-sm sub-text"><span
+                                style="color:#f59e0b;margin-top:3px">▸</span>Performed regression, API, and UAT testing;
+                            improved release efficiency through test automation.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <div class="section-label"><i data-lucide="layers" class="w-3.5 h-3.5"></i>Key Projects</div>
+            <div class="grid md:grid-cols-2 gap-4">
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="p-2.5 rounded-xl project-accent flex-shrink-0">
+                            <i data-lucide="alert-circle" class="w-5 h-5" style="color:#c084fc"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base">AI Incident Automation System</h3>
+                            <span class="text-xs muted">Hexaware Technologies</span>
+                        </div>
+                    </div>
+                    <p class="text-sm sub-text leading-relaxed">Built an AI-based solution that automatically converts
+                        customer issue descriptions into incidents, ensuring uninterrupted support during agent
+                        unavailability.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">GenAI</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">Lambda</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">Amazon Connect</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="p-2.5 rounded-xl project-accent flex-shrink-0">
+                            <i data-lucide="phone-call" class="w-5 h-5" style="color:#c084fc"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base">Click-to-Call (WebRTC Solution)</h3>
+                            <span class="text-xs muted">Hexaware Technologies</span>
+                        </div>
+                    </div>
+                    <p class="text-sm sub-text leading-relaxed">Developed a numberless calling solution using
+                        internet-based connectivity, deployable across websites, Microsoft Teams, and enterprise
+                        applications.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">WebRTC</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">Amazon Connect</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="p-2.5 rounded-xl project-accent flex-shrink-0">
+                            <i data-lucide="message-square" class="w-5 h-5" style="color:#c084fc"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base">GenAI Call Summarization</h3>
+                            <span class="text-xs muted">Hexaware Technologies</span>
+                        </div>
+                    </div>
+                    <p class="text-sm sub-text leading-relaxed">Implemented AI-driven call summaries, reducing manual
+                        effort and improving agent productivity by automating post-call wrap-up processes.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">GenAI</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">Contact Lens</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">Python</span>
+                    </div>
+                </div>
+
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-6">
+                    <div class="flex items-start gap-3 mb-3">
+                        <div class="p-2.5 rounded-xl project-accent flex-shrink-0">
+                            <i data-lucide="layout-dashboard" class="w-5 h-5" style="color:#c084fc"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base">AWS Dashboard Applications (6+)</h3>
+                            <span class="text-xs muted">Hexaware Technologies</span>
+                        </div>
+                    </div>
+                    <p class="text-sm sub-text leading-relaxed">Created scalable dashboards for monitoring, analytics,
+                        and operations, improving visibility and decision-making across teams.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">S3</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">CloudFront</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">DynamoDB</span>
+                        <span class="skill-tag px-2 py-0.5 rounded text-xs">Lambda</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS + EDUCATION side by side -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- CERTIFICATIONS -->
+            <section id="certifications">
+                <div class="section-label"><i data-lucide="award" class="w-3.5 h-3.5"></i>Certifications</div>
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 rounded-xl" style="background:rgba(245,158,11,0.12)">
+                            <i data-lucide="award" class="w-6 h-6" style="color:#fbbf24"></i>
+                        </div>
+                        <div>
+                            <div class="cert-badge inline-block px-3 py-0.5 rounded-full text-xs font-bold mb-1">AWS
+                                Certified</div>
+                            <h3 class="font-bold text-sm">AWS Certified Solutions Architect</h3>
+                            <p class="text-xs muted">Associate Level · Amazon Web Services</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section id="education">
+                <div class="section-label"><i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>Education</div>
+                <div class="glass glass-card-transition glass-hover rounded-2xl p-6 space-y-4">
+                    <div class="flex gap-3">
+                        <div class="timeline-dot mt-1.5"></div>
+                        <div>
+                            <h3 class="font-bold text-sm">M.Tech – Computing Systems &amp; Infrastructure</h3>
+                            <p class="text-xs sub-text">Birla Institute of Technology and Science, Pilani</p>
+                            <p class="text-xs muted mt-0.5">2019 – 2023</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="timeline-dot mt-1.5"></div>
+                        <div>
+                            <h3 class="font-bold text-sm">Bachelor of Computer Applications</h3>
+                            <p class="text-xs sub-text">NRI Institute, Bangalore</p>
+                            <p class="text-xs muted mt-0.5">2016 – 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="section-label"><i data-lucide="mail" class="w-3.5 h-3.5"></i>Get In Touch</div>
+            <div class="glass rounded-2xl p-7 md:p-10">
+
+                
+                    <div>
+                        <h2 class="text-2xl font-black mb-2">Let's <span class="gradient-text">connect</span></h2>
+                        <p class="sub-text text-sm mb-6 leading-relaxed">Open to new opportunities, collaborations, or just a conversation about AWS, Amazon Connect, or cloud architecture.</p>
+                        <div class="space-y-3">
+                    <a href="mailto:anilmanjunath.inbox@gmail.com"
+                        class="flex items-center gap-3 contact-chip px-4 py-3 rounded-xl hover:border-indigo-400 transition-colors">
+                        <div class="p-1.5 rounded-lg" style="background:rgba(99,102,241,0.15)"><i data-lucide="mail"
+                                class="w-4 h-4" style="color:#818cf8"></i></div>
+                        <div>
+                            <div class="text-xs muted">Email</div>
+                            <div class="text-sm font-medium">anilmanjunath.inbox@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="tel:+918310270245"
+                        class="flex items-center gap-3 contact-chip px-4 py-3 rounded-xl hover:border-indigo-400 transition-colors">
+                        <div class="p-1.5 rounded-lg" style="background:rgba(99,102,241,0.15)"><i data-lucide="phone"
+                                class="w-4 h-4" style="color:#818cf8"></i></div>
+                        <div>
+                            <div class="text-xs muted">Phone</div>
+                            <div class="text-sm font-medium">+91 83102 70245</div>
+                        </div>
+                    </a>
+                            <div class="flex items-center gap-3 contact-chip px-4 py-3 rounded-xl">
+                                <div class="p-1.5 rounded-lg" style="background:rgba(99,102,241,0.15)"><i data-lucide="map-pin" class="w-4 h-4" style="color:#818cf8"></i></div>
+                                <div><div class="text-xs muted">Location</div><div class="text-sm font-medium">Bangalore, India</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="section-divider border-t mt-4 py-6 text-center text-xs muted">
+        <p>Designed &amp; built with ✦ by Anil M &nbsp;·&nbsp; &copy; 2025</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleMenu() {
+            const m = document.getElementById('mobile-nav');
+            m.classList.toggle('open');
+        }
+
+        function setActive(el) {
+            document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function handleForm(e) {
+            e.preventDefault();
+            const btn = document.getElementById('form-btn');
+            btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 inline mr-2"></i>Message Sent!';
+            btn.style.background = 'linear-gradient(135deg,#22c55e,#16a34a)';
+            lucide.createIcons();
+            setTimeout(() => {
+                btn.innerHTML = '<i data-lucide="send" class="w-4 h-4 inline mr-2"></i>Send Message';
+                btn.style.background = 'linear-gradient(135deg,#6366f1,#a855f7)';
+                e.target.reset();
+                lucide.createIcons();
+            }, 3000);
+        }
+
+        // Animate progress bars on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.querySelectorAll('.progress-fill[data-w]').forEach(b => { b.style.width = b.dataset.w; });
+            });
+        }, { threshold: 0.3 });
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+        // Highlight active nav on scroll
+        const sections = document.querySelectorAll('section[id], header[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+            document.querySelectorAll('.nav-pill[href]').forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+        }, { passive: true });
+    </script>
+</body>
+
+</html>
