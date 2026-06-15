@@ -466,11 +466,11 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <button onclick="window.print()"
+                <a href="Resume Anil.pdf" download="Resume_Anil_M.pdf"
                     class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full download-btn text-xs font-semibold shadow-lg transition-all tooltip"
-                    data-tip="Print / Save as PDF">
+                    data-tip="Download Resume PDF">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i> Download CV
-                </button>
+                </a>
                 <button class="md:hidden p-2 rounded-lg glass nav-link" onclick="toggleMenu()">
                     <i data-lucide="menu" class="w-4 h-4"></i>
                 </button>
@@ -491,8 +491,7 @@
                     data-lucide="graduation-cap" class="w-4 h-4"></i>Education</a>
             <a href="#contact" class="nav-pill nav-link text-sm" onclick="setActive(this);toggleMenu()"><i
                     data-lucide="mail" class="w-4 h-4"></i>Contact</a>
-            <button onclick="window.print()" class="nav-pill download-btn text-sm w-fit"><i data-lucide="download"
-                    class="w-4 h-4"></i>Download CV</button>
+            <a href="Resume Anil.pdf" download="Resume_Anil_M.pdf" class="nav-pill download-btn text-sm w-fit"><i data-lucide="download" class="w-4 h-4"></i>Download CV</a>
         </div>
     </nav>
 
@@ -542,10 +541,10 @@
                             class="glass px-6 py-2.5 rounded-full text-sm font-semibold nav-link transition-all hover:opacity-80">
                             View Experience
                         </a>
-                        <button onclick="window.print()"
+                        <a href="Resume Anil.pdf" download="Resume_Anil_M.pdf"
                             class="glass px-6 py-2.5 rounded-full text-sm font-semibold nav-link transition-all hover:opacity-80">
                             <i data-lucide="download" class="w-3.5 h-3.5 inline mr-1.5"></i>Download CV
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="hidden lg:grid grid-cols-2 gap-3 flex-shrink-0">
@@ -1052,4 +1051,5 @@
         }, { passive: true });
     </script>
 </body>
+
 </html>
