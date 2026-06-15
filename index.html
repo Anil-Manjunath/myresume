@@ -293,16 +293,12 @@
         }
 
         .avatar-inner {
-            background: conic-gradient(from 180deg, #6366f1, #a855f7, #ec4899, #6366f1);
             border-radius: 50%;
             width: 96px;
             height: 96px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: white;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.4), 0 8px 32px rgba(99,102,241,0.45), 0 2px 12px rgba(0,0,0,0.4);
         }
 
         .timeline-dot {
@@ -510,7 +506,7 @@
             <div class="relative flex flex-col md:flex-row items-center md:items-start gap-8">
                 <div class="flex-shrink-0">
                     <div class="avatar-ring">
-                        <div class="avatar-inner">A</div>
+                        <img src="Anil pic.png" alt="Anil M" class="avatar-inner">
                     </div>
                 </div>
                 <div class="flex-1 text-center md:text-left">
